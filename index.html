@@ -217,6 +217,7 @@
         
         <div class="hidden md:flex gap-12 text-[11px] font-medium tracking-widest uppercase text-gray-400">
             <a href="#prologue" class="hover:text-white transition-colors hover-trigger">Intro</a>
+            <a href="#about" class="hover:text-white transition-colors hover-trigger">About</a>
             <a href="#ventures" class="hover:text-white transition-colors hover-trigger">Work</a>
             <a href="#engine" class="hover:text-white transition-colors hover-trigger">Specs</a>
             <a href="#human" class="hover:text-white transition-colors hover-trigger">Offline</a>
@@ -229,159 +230,108 @@
         <div id="smooth-content">
             
             <!-- HERO: THE BUILDER MINDSET -->
-            <section id="prologue" class="h-screen flex flex-col justify-center px-6 md:px-20 relative">
+            <section id="prologue" class="min-h-screen flex flex-col justify-center px-6 md:px-20 relative pt-32 pb-12">
                 <div class="max-w-[1400px] mx-auto w-full z-10">
-                    <div class="flex items-center gap-4 mb-8">
-                        <span class="h-[1px] w-12 bg-white/20"></span>
-                        <p class="font-mono text-xs text-gray-500 tracking-widest uppercase scramble-trigger">Builder First</p>
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+                        
+                        <!-- Left: Text content -->
+                        <div class="w-full lg:w-3/5">
+                            <div class="flex items-center gap-4 mb-8">
+                                <span class="h-[1px] w-12 bg-white/20"></span>
+                                <p class="font-mono text-xs text-gray-500 tracking-widest uppercase scramble-trigger">Human First</p>
+                            </div>
+                            
+                            <h1 class="text-[12vw] lg:text-[7vw] xl:text-[8vw] leading-[0.85] font-light text-white mb-12 mix-blend-difference">
+                                <span class="block scramble-trigger">I Build.</span>
+                                <span class="block text-gray-500 italic font-serif scramble-trigger">The Future of</span>
+                                <span class="block scramble-trigger">Intelligence</span>
+                            </h1>
+                        </div>
+
+                        <!-- Right: Image -->
+                        <div class="w-full lg:w-2/5 hidden md:block">
+                            <div class="relative w-full max-w-[380px] ml-auto aspect-[4/5] tilt-card-wrapper hover-trigger">
+                                <div class="tilt-card w-full h-full relative">
+                                    <div class="shine"></div>
+                                    <div class="tilt-inner w-full h-full absolute inset-0">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent z-10"></div>
+                                        <!-- Sayan's Actual Photo (Styled with CSS B&W Filters) -->
+                                        <img src="SC.jpg" 
+                                             alt="Sayan Portrait" 
+                                             class="w-full h-full object-cover grayscale contrast-125 brightness-90 border border-white/10 rounded-sm shadow-2xl shadow-black/80">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODE TOGGLE -->
+            <section id="mode-toggle" class="pt-4 pb-20 px-6 flex justify-center items-center z-20 relative bg-[#030303]">
+                <div class="bg-[#111111] p-1.5 rounded-full flex relative border border-white/10 w-full max-w-[500px] cursor-pointer hover-trigger shadow-2xl shadow-black" id="toggle-container">
+                    <!-- Sliding background -->
+                    <div id="toggle-slider" class="absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white rounded-full transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] shadow-md" style="left: 6px;"></div>
+                    
+                    <button id="btn-read" class="relative z-10 flex-1 py-4 text-xs font-mono uppercase tracking-widest text-black transition-colors duration-500 font-bold">I Love Reading</button>
+                    <button id="btn-chat" class="relative z-10 flex-1 py-4 text-xs font-mono uppercase tracking-widest text-gray-500 transition-colors duration-500 font-bold">AI is Fine :)</button>
+                </div>
+            </section>
+
+            <!-- DIGITAL TWIN CHAT MODE -->
+            <div id="content-chat" class="hidden min-h-[70vh] px-6 md:px-20 pb-32">
+                <div class="max-w-[900px] mx-auto h-[600px] border border-white/10 rounded-xl bg-[#080808] flex flex-col relative overflow-hidden shadow-2xl shadow-black/80">
+                    <!-- Header -->
+                    <div class="p-5 border-b border-white/10 flex items-center bg-[#050505]">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-signal-blue rounded-full animate-pulse"></div>
+                            <span class="font-mono text-sm text-white uppercase tracking-widest font-bold">SAYN</span>
+                        </div>
                     </div>
                     
-                    <h1 class="text-[9vw] leading-[0.85] font-light text-white mb-12 mix-blend-difference">
-                        <span class="block scramble-trigger">I Build.</span>
-                        <span class="block text-gray-500 italic font-serif scramble-trigger">I Ship.</span>
-                        <span class="block scramble-trigger">Pure Signal.</span>
-                    </h1>
-
-                    <div class="flex flex-col md:flex-row justify-between items-end border-t border-white/10 pt-8 w-full">
-                        <div class="max-w-xl">
-                            <p class="text-lg text-gray-400 font-light leading-relaxed">
-                                I don't build demos for Twitter. I build systems for users.
-                                <br>
-                                From <span class="text-white">idea to deployment</span>, I handle the mess so you don't have to. Real products, real revenue, no theater.
-                            </p>
-                        </div>
-                        <div class="mt-8 md:mt-0">
-                            <a href="#ventures" class="group flex items-center gap-4 hover-trigger">
-                                <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-                                </div>
-                                <span class="text-xs uppercase tracking-widest opacity-60 group-hover:opacity-100 transition-opacity">See The Work</span>
-                            </a>
-                        </div>
+                    <!-- Chat Log -->
+                    <div id="chat-log" class="flex-1 overflow-y-auto p-6 space-y-6 flex flex-col scroll-smooth">
+                        <!-- AI Welcome Message -->
+                        <div class="self-start max-w-[85%] md:max-w-[75%] bg-[#111111] border border-white/5 rounded-2xl rounded-tl-sm px-5 py-4 text-gray-300 font-light text-sm leading-relaxed whitespace-pre-wrap">Hey! I'm Sayan's digital twin. I can chat about my work, the AI tools I'm building, or what I'm currently reading and watching. 
+                        
+What's up?</div>
                     </div>
-                </div>
-            </section>
-
-            <!-- VENTURES: THE BUILDS -->
-            <section id="ventures" class="py-40 px-6 md:px-20 relative">
-                <div class="chapter-line h-full"></div>
-                
-                <div class="max-w-[1400px] mx-auto">
-                    <div class="flex items-baseline justify-between mb-32">
-                        <div>
-                            <span class="font-mono text-xs text-gray-500 tracking-widest uppercase mb-2 block">Shipped Products</span>
-                            <h2 class="text-5xl md:text-7xl font-display uppercase text-white">The Output</h2>
-                        </div>
-                        <span class="font-mono text-xs text-gray-500">[ Live & Profitable ]</span>
+                    
+                    <!-- Input Area -->
+                    <div class="p-4 border-t border-white/10 bg-[#050505]">
+                        <form id="chat-form" class="flex gap-4">
+                            <input type="text" id="chat-input" placeholder="Ask me about my tech stack, experience, or what books I read..." autocomplete="off" class="flex-1 bg-[#111111] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 transition-colors font-mono placeholder:text-gray-600">
+                            <button type="submit" class="bg-white text-black px-6 py-3 rounded-lg font-mono text-xs uppercase tracking-widest hover:bg-gray-200 transition-colors font-bold hover-trigger">Send</button>
+                        </form>
                     </div>
-
-                    <!-- VENTURE 1: PLUS B -->
-                    <div class="mb-40 tilt-card-wrapper hover-trigger" onclick="window.open('https://plusb.in', '_blank')">
-                        <div class="tilt-card relative bg-[#080808] border border-white/10 p-8 md:p-12 aspect-[16/10] md:aspect-[21/9] flex items-center justify-between group overflow-hidden rounded-sm shadow-2xl shadow-black/50">
-                            <div class="shine"></div>
-                            
-                            <!-- Visual -->
-                            <div class="tilt-inner z-10 absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700 mix-blend-lighten">
-                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" class="w-full h-full object-cover filter contrast-125 saturate-0" alt="Plus B Workspace">
-                            </div>
-
-                            <div class="tilt-inner z-20 relative w-full flex flex-col md:flex-row justify-between h-full">
-                                <div class="max-w-2xl flex flex-col justify-center">
-                                    <span class="text-[10px] font-mono text-lux-gold/80 mb-4 tracking-[0.2em] block">SOLO FOUNDER MINDSET</span>
-                                    <h3 class="text-4xl md:text-6xl font-light text-white mb-6 group-hover:tracking-wide transition-all duration-500">Plus B</h3>
-                                    
-                                    <div class="mb-8 p-6 bg-black/60 backdrop-blur-md border border-white/5 rounded-sm max-w-lg">
-                                        <p class="text-white font-light text-lg mb-4">
-                                            Stop paying for 10 distinct AI tools.
-                                            <br><span class="text-gray-400 text-sm">Subscription fatigue is real. I fixed it.</span>
-                                        </p>
-                                        <div class="grid grid-cols-2 gap-6 text-sm font-mono text-gray-400">
-                                            <div>
-                                                <strong class="text-white block mb-1">Unified Core</strong>
-                                                GPT-5.2 • Claude • Gemini • Sora
-                                            </div>
-                                            <div>
-                                                <strong class="text-white block mb-1">The Deal</strong>
-                                                One sub. No switching costs.
-                                            </div>
-                                            <div>
-                                                <strong class="text-white block mb-1">Tools</strong>
-                                                Creative Studio • Turing Agent
-                                            </div>
-                                            <div>
-                                                <strong class="text-signal-blue block mb-1">$50/mo</strong>
-                                                <span class="line-through opacity-50">$165/mo</span> (Competitors)
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <ul class="flex flex-wrap gap-3 text-[10px] uppercase tracking-widest text-gray-500">
-                                        <li class="bg-white/5 px-3 py-1 rounded-sm border border-white/5">Productivity</li>
-                                        <li class="bg-white/5 px-3 py-1 rounded-sm border border-white/5">SaaS</li>
-                                        <li class="bg-white/5 px-3 py-1 rounded-sm border border-white/5">No-Fluff</li>
-                                    </ul>
-                                </div>
-
-                                <div class="hidden md:flex flex-col justify-end items-end text-right">
-                                    <div class="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-2">Efficiency</div>
-                                    <div class="text-4xl font-light text-white mb-1">3.3x</div>
-                                    <div class="w-32 h-1 bg-gradient-to-r from-gray-800 to-signal-blue mt-2"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- VENTURE 2: AI EXCHANGE -->
-                    <div class="mb-20 tilt-card-wrapper hover-trigger" onclick="window.open('https://aiexchange.tech', '_blank')">
-                        <div class="tilt-card relative bg-[#080808] border border-white/5 p-8 md:p-12 aspect-[16/10] md:aspect-[21/9] flex items-center justify-between group overflow-hidden rounded-sm">
-                            <div class="shine"></div>
-                            
-                            <div class="tilt-inner z-10 absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-700 mix-blend-lighten">
-                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2600&auto=format&fit=crop" class="w-full h-full object-cover filter grayscale contrast-125" alt="AI Exchange">
-                            </div>
-
-                            <div class="tilt-inner z-20 relative w-full flex flex-col md:flex-row justify-between h-full">
-                                <div class="hidden md:flex flex-col justify-center items-start">
-                                    <div class="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-2">System</div>
-                                    <div class="text-2xl font-light text-white mb-1">Infrastructure</div>
-                                </div>
-
-                                <div class="max-w-xl flex flex-col justify-center text-right ml-auto">
-                                    <span class="text-[10px] font-mono text-white/40 mb-4 tracking-[0.2em] block">MARKETPLACE INFRA</span>
-                                    <h3 class="text-4xl md:text-6xl font-light text-white mb-6 group-hover:tracking-wide transition-all duration-500">AI Exchange</h3>
-                                    <p class="text-gray-400 font-light leading-relaxed mb-8 text-sm md:text-base">
-                                        Intelligence assets trapped in silos are useless. I built the pipes. A scalable marketplace for high-compute models and fine-tuned assets.
-                                    </p>
-                                    <ul class="flex flex-wrap gap-3 justify-end text-[10px] uppercase tracking-widest text-gray-500">
-                                        <li class="bg-white/5 px-3 py-1 rounded-sm border border-white/5">Backend Arch</li>
-                                        <li class="bg-white/5 px-3 py-1 rounded-sm border border-white/5">Scale</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SKILL MARQUEE -->
-            <div class="py-12 bg-[#030303] border-t border-b border-white/5 overflow-hidden">
-                <div class="flex items-center gap-16 animate-marquee whitespace-nowrap">
-                    <span class="text-2xl font-light text-gray-600">Product Thinking</span>
-                    <span class="text-2xl font-light text-white">Full-Stack AI</span>
-                    <span class="text-2xl font-light text-gray-600">Cost-Efficient Arch</span>
-                    <span class="text-2xl font-light text-white">System Design</span>
-                    <span class="text-2xl font-light text-gray-600">LangChain</span>
-                    <span class="text-2xl font-light text-white">Monetization</span>
-                    <span class="text-2xl font-light text-gray-600">Fine-Tuning</span>
-                    <span class="text-2xl font-light text-white">RAG Pipelines</span>
-                    <span class="text-2xl font-light text-gray-600">Python</span>
-                    <span class="text-2xl font-light text-white">Automation</span>
-                    <!-- Duplicate -->
-                    <span class="text-2xl font-light text-gray-600">Product Thinking</span>
-                    <span class="text-2xl font-light text-white">Full-Stack AI</span>
-                    <span class="text-2xl font-light text-gray-600">Cost-Efficient Arch</span>
                 </div>
             </div>
+
+            <!-- READING MODE CONTAINER -->
+            <div id="content-read">
+
+            <!-- ABOUT: THE ORIGIN -->
+            <section id="about" class="py-32 px-6 md:px-20 relative bg-[#050505] border-t border-white/5">
+                <div class="max-w-[1000px] mx-auto">
+                    <div class="flex items-center gap-4 mb-16">
+                        <span class="h-[1px] w-12 bg-white/20"></span>
+                        <p class="font-mono text-xs text-gray-500 tracking-widest uppercase">01 / Origin Story</p>
+                    </div>
+                    
+                    <div class="space-y-12 text-xl md:text-3xl font-light text-gray-400 leading-snug">
+                        <p class="hover:text-white transition-colors duration-500 hover-trigger">
+                            It started with a compulsion to dismantle. As a kid, I didn't just want to use systems—I wanted to break them open. <span class="text-white">If it had gears, logic, or a circuit board, I needed to see the source code of its existence.</span>
+                        </p>
+                        <p class="hover:text-white transition-colors duration-500 hover-trigger">
+                            That curiosity evolved into a relentless pursuit of first principles. Breaking things is easy; <i class="font-serif text-gray-600">building them is where the friction lies.</i> I transitioned from teaching complex physics to automating heavy industrial workflows. The math became infrastructure. The theory became deployed, executable logic.
+                        </p>
+                        <p class="hover:text-white transition-colors duration-500 hover-trigger">
+                            Today, I sit at the intersection of scale and intelligence. Whether I'm architecting GenAI layers for enterprise or bootstrapping pure-signal SaaS products, the core drive remains unchanged. <span class="text-white border-b border-lux-gold/30 pb-1">I no longer just study the system. I write the rules.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
 
             <!-- THE BLUEPRINT (EXPERTISE) -->
             <section id="engine" class="py-40 px-6 md:px-20 bg-gradient-to-b from-[#030303] to-[#0a0a0a]">
@@ -401,17 +351,6 @@
                         <p class="text-lg text-gray-400 font-light leading-relaxed">
                             At <span class="text-white">L&T Construction</span>, I don't just "do AI." I build robust, self-healing pipelines that replace fragile manual work. I trade complexity for reliability.
                         </p>
-                        
-                        <div class="flex gap-12 mt-16 pt-8 border-t border-white/10">
-                            <div>
-                                <span class="text-xs font-mono text-gray-600 uppercase tracking-widest">Foundation</span>
-                                <div class="text-xl text-white mt-2">IIT Madras</div>
-                            </div>
-                            <div>
-                                <span class="text-xs font-mono text-gray-600 uppercase tracking-widest">Network</span>
-                                <div class="text-xl text-white mt-2">Harvard HPAIR</div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="space-y-20 pt-12">
@@ -420,12 +359,12 @@
                             <div class="absolute -left-8 top-2 w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <div class="flex justify-between items-baseline mb-2">
                                 <h4 class="text-3xl text-white font-light">L&T Construction</h4>
-                                <span class="text-xs font-mono text-gray-600">2023 — PRES</span>
+                                <span class="text-xs font-mono text-gray-600">NOV 2023 — PRES</span>
                             </div>
                             <div class="pl-0 border-b border-white/10 pb-8 group-hover:border-white transition-colors duration-500">
-                                <p class="text-xs font-bold text-lux-gold/80 mb-4 uppercase tracking-widest">Data Analytics Engineer</p>
+                                <p class="text-xs font-bold text-lux-gold/80 mb-4 uppercase tracking-widest">Engineer - Data Analytics</p>
                                 <p class="text-sm text-gray-500 leading-relaxed max-w-md">
-                                    Architecting the GenAI layer. Building agents that actually work in production, reducing manual latency by 40%. No toys, just tools.
+                                    Architecting the GenAI layer. Built Structural Agentic Modeller (SAM) improving productivity by 60%. Fine-tuned Gemma 2 (QLoRA) for NLP-to-SQL. Deployed PyTorch BOQ prediction models.
                                 </p>
                             </div>
                         </div>
@@ -435,33 +374,187 @@
                             <div class="absolute -left-8 top-2 w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <div class="flex justify-between items-baseline mb-2">
                                 <h4 class="text-3xl text-white font-light">L&T Construction</h4>
-                                <span class="text-xs font-mono text-gray-600">2022 — 2023</span>
+                                <span class="text-xs font-mono text-gray-600">OCT 2021 — OCT 2023</span>
                             </div>
                             <div class="pl-0 border-b border-white/10 pb-8 group-hover:border-white transition-colors duration-500">
-                                <p class="text-xs font-bold text-white mb-4 uppercase tracking-widest opacity-50">Automation Engineer</p>
+                                <p class="text-xs font-bold text-white mb-4 uppercase tracking-widest opacity-50">Engineer - Automation</p>
                                 <p class="text-sm text-gray-500 leading-relaxed max-w-md">
-                                    Ruthlessly automated operational workflows with Python. If it can be scripted, it shouldn't be human.
+                                    Developed Python/Vue/MSSQL automation systems boosting engineering productivity by 70%. Built real-time analytics dashboards using Power BI and Tableau.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Role 3 -->
-                        <div class="group hover-trigger relative">
-                            <div class="absolute -left-8 top-2 w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="text-3xl text-white font-light">Learnity</h4>
-                                <span class="text-xs font-mono text-gray-600">2019 — 2021</span>
+                        <!-- Education Section -->
+                        <div class="pt-8 border-t border-white/5 mt-12">
+                            <div class="flex items-center gap-4 mb-10">
+                                <span class="h-[1px] w-8 bg-white/20"></span>
+                                <p class="font-mono text-xs text-gray-500 tracking-widest uppercase">Education</p>
                             </div>
-                            <div class="pl-0 border-b border-white/10 pb-8 group-hover:border-white transition-colors duration-500">
-                                <p class="text-xs font-bold text-white mb-4 uppercase tracking-widest opacity-50">Educator</p>
-                                <p class="text-sm text-gray-500 leading-relaxed max-w-md">
-                                    Breaking down complex physics and math into first principles. The ultimate test of understanding.
-                                </p>
+                            
+                            <div class="space-y-20">
+                                <!-- Edu 1 -->
+                                <div class="group hover-trigger relative">
+                                    <div class="absolute -left-8 top-2 w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-2">
+                                        <h4 class="text-3xl text-white font-light">IIT Madras</h4>
+                                        <span class="text-xs font-mono text-gray-600 mt-1 md:mt-0 whitespace-nowrap">2024 — PRESENT</span>
+                                    </div>
+                                    <div class="pl-0 border-b border-white/10 pb-8 group-hover:border-white transition-colors duration-500">
+                                        <div class="flex justify-between items-center mb-4">
+                                            <p class="text-xs font-bold text-lux-gold/80 uppercase tracking-widest">BS in Data Science and Applications</p>
+                                            <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest text-right ml-4">Chennai, TN</span>
+                                        </div>
+                                        <!-- <p class="text-xs text-gray-500 font-mono uppercase tracking-widest">CGPA: <span class="text-white">8.03</span> <span class="opacity-50">(Proj: 10)</span></p> -->
+                                    </div>
+                                </div>
+
+
+                                <!-- Edu 2 -->
+                                <div class="group hover-trigger relative">
+                                    <div class="absolute -left-8 top-2 w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-2">
+                                        <h4 class="text-2xl md:text-3xl text-white font-light pr-4">Ramakrishna Mission Shilpapitha</h4>
+                                        <span class="text-xs font-mono text-gray-600 mt-2 md:mt-0 whitespace-nowrap">AUG 2018 — AUG 2021</span>
+                                    </div>
+                                    <div class="pl-0 border-b border-white/10 pb-8 group-hover:border-white transition-colors duration-500">
+                                        <div class="flex justify-between items-center mb-4">
+                                            <p class="text-xs font-bold text-white opacity-50 uppercase tracking-widest">Diploma in Electrical Engineering</p>
+                                            <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest text-right ml-4">Kolkata, WB</span>
+                                        </div>
+                                        <!-- <p class="text-xs text-gray-500 font-mono uppercase tracking-widest">CGPA: <span class="text-white">9.00</span></p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- AWARDS & CERTIFICATIONS -->
+            <section id="awards" class="py-32 px-6 md:px-20 bg-[#050505] border-t border-white/5">
+                <div class="max-w-[1400px] mx-auto">
+                    <div class="flex items-center gap-4 mb-24">
+                        <span class="h-[1px] w-12 bg-white/20"></span>
+                        <p class="font-mono text-xs text-gray-500 tracking-widest uppercase">Recognition</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                        <div>
+                            <h3 class="text-3xl font-light text-white mb-12 uppercase tracking-wide">Awards</h3>
+                            <div class="space-y-12">
+                                <div class="group hover-trigger">
+                                    <h4 class="text-xl text-white mb-2">Process Innovation Award</h4>
+                                    <p class="text-xs font-mono text-lux-gold/80 mb-4 tracking-widest uppercase">L&T CoE • 2023 & 2024</p>
+                                    <p class="text-sm text-gray-500 leading-relaxed max-w-md">Recognized for building automation and analytics platforms that significantly improved engineering productivity and operational efficiency.</p>
+                                </div>
+                                <div class="group hover-trigger">
+                                    <h4 class="text-xl text-white mb-2">Harvard HPAIR Delegate</h4>
+                                    <p class="text-xs font-mono text-signal-blue mb-4 tracking-widest uppercase">International Leadership Conference</p>
+                                    <p class="text-sm text-gray-500 leading-relaxed max-w-md">Selected for international leadership conference representing academic and professional excellence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-light text-white mb-12 uppercase tracking-wide">Certifications</h3>
+                            <div class="space-y-8">
+                                <div class="group hover-trigger border-b border-white/5 pb-6">
+                                    <h4 class="text-lg text-white mb-1">AI Essentials</h4>
+                                    <p class="text-xs font-mono text-gray-600 tracking-widest uppercase">IBM</p>
+                                </div>
+                                <div class="group hover-trigger border-b border-white/5 pb-6">
+                                    <h4 class="text-lg text-white mb-1">Generative AI for Data Science</h4>
+                                    <p class="text-xs font-mono text-gray-600 tracking-widest uppercase">Microsoft</p>
+                                </div>
+                                <div class="group hover-trigger border-b border-white/5 pb-6 border-b-transparent">
+                                    <h4 class="text-lg text-white mb-1">GenAI Basics</h4>
+                                    <p class="text-xs font-mono text-gray-600 tracking-widest uppercase">Duke University</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- VENTURES: THE BUILDS -->
+            <section id="ventures" class="py-40 px-6 md:px-20 relative">
+                <div class="chapter-line h-full"></div>
+                
+                <div class="max-w-[1400px] mx-auto">
+                    <div class="flex items-baseline justify-between mb-32">
+                        <div>
+                            <span class="font-mono text-xs text-gray-500 tracking-widest uppercase mb-2 block">Shipped Products</span>
+                            <h2 class="text-5xl md:text-7xl font-display uppercase text-white">The Output</h2>
+                        </div>
+                        <span class="font-mono text-xs text-gray-500">What I build</span>
+                    </div>
+
+                    <!-- VENTURE 1: PLUS B -->
+                    <div class="mb-20 tilt-card-wrapper hover-trigger" onclick="window.open('https://plusb.in', '_blank')">
+                        <div class="tilt-card relative bg-[#080808] border border-white/5 p-8 md:p-12 aspect-[16/10] md:aspect-[21/9] flex items-center justify-between group overflow-hidden rounded-sm cursor-pointer">
+                            <div class="shine"></div>
+                            
+                            <div class="tilt-inner z-10 absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-700 mix-blend-lighten">
+                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" class="w-full h-full object-cover filter grayscale contrast-125" alt="Plus B Workspace">
+                            </div>
+
+                            <div class="tilt-inner z-20 relative w-full flex flex-col md:flex-row justify-between h-full">
+                                <div class="hidden md:flex flex-col justify-center items-start">
+                                    <div class="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-2">Software</div>
+                                    <div class="text-2xl font-light text-white mb-1">Agentic AI</div>
+                                </div>
+
+                                <div class="max-w-xl flex flex-col justify-center text-right ml-auto">
+                                    <span class="text-[10px] font-mono text-lux-gold/80 mb-4 tracking-[0.2em] block">AGENTIC AI OS</span>
+                                    <h3 class="text-4xl md:text-6xl font-light text-white mb-6 group-hover:tracking-wide transition-all duration-500">Plus B</h3>
+                                    <p class="text-gray-400 font-light leading-relaxed mb-8 text-sm md:text-base">
+                                        An agentic AI suite with 7 specialized experts powered by SOTA models and curated tools, sharing unified context and memory for seamless multi-task collaboration.
+                                    </p>
+                                    <ul class="flex flex-wrap gap-3 justify-end text-[10px] uppercase tracking-widest text-gray-500">
+                                        <li class="bg-white/5 px-3 py-1 rounded-sm border border-white/5">Productivity</li>
+                                        <li class="bg-white/5 px-3 py-1 rounded-sm border border-white/5">SaaS</li>
+                                        <li class="bg-white/5 px-3 py-1 rounded-sm border border-white/5">Agentic Framework</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILL MARQUEE -->
+            <div class="py-12 bg-[#030303] border-t border-b border-white/5 overflow-hidden">
+                <div class="flex items-center gap-16 animate-marquee whitespace-nowrap">
+                    <span class="text-2xl font-light text-gray-600">Python</span>
+                    <span class="text-2xl font-light text-white">PyTorch</span>
+                    <span class="text-2xl font-light text-gray-600">SQL</span>
+                    <span class="text-2xl font-light text-white">JavaScript</span>
+                    <span class="text-2xl font-light text-gray-600">Google Gemini</span>
+                    <span class="text-2xl font-light text-white">OpenAI APIs</span>
+                    <span class="text-2xl font-light text-gray-600">QLoRA Fine-Tuning</span>
+                    <span class="text-2xl font-light text-white">Vue.js</span>
+                    <span class="text-2xl font-light text-gray-600">GCP Vertex AI</span>
+                    <span class="text-2xl font-light text-white">Scikit-learn</span>
+                    <!-- Duplicate -->
+                    <span class="text-2xl font-light text-gray-600">Python</span>
+                    <span class="text-2xl font-light text-white">PyTorch</span>
+                    <span class="text-2xl font-light text-gray-600">SQL</span>
+                    <span class="text-2xl font-light text-gray-600">Python</span>
+                    <span class="text-2xl font-light text-white">PyTorch</span>
+                    <span class="text-2xl font-light text-gray-600">SQL</span>
+                    <span class="text-2xl font-light text-white">JavaScript</span>
+                    <span class="text-2xl font-light text-gray-600">Google Gemini</span>
+                    <span class="text-2xl font-light text-white">OpenAI APIs</span>
+                    <span class="text-2xl font-light text-gray-600">QLoRA Fine-Tuning</span>
+                    <span class="text-2xl font-light text-white">Vue.js</span>
+                    <span class="text-2xl font-light text-gray-600">GCP Vertex AI</span>
+                    <span class="text-2xl font-light text-white">Scikit-learn</span>
+                    <!-- Duplicate -->
+                    <span class="text-2xl font-light text-gray-600">Python</span>
+                    <span class="text-2xl font-light text-white">PyTorch</span>
+                    <span class="text-2xl font-light text-gray-600">SQL</span>
+                </div>
+            </div>
 
             <!-- THE INPUTS (HUMAN STACK) -->
             <section id="human" class="py-40 px-6 md:px-20 bg-[#080808] border-t border-white/5">
@@ -481,12 +574,13 @@
                             <div class="tilt-card bg-[#050505] p-10 h-full border border-white/5 hover:border-white/20 transition-colors">
                                 <span class="text-xs font-mono text-lux-gold uppercase tracking-widest mb-6 block">Visuals</span>
                                 <p class="text-gray-400 font-light leading-relaxed mb-6">
-                                    "I analyze structure. In code and in frames. Photography forces you to see what's actually there, not what you expect."
+                                    "I analyze structure. In code and in frames. A study of masterful pacing, scale, and nonlinear narratives."
                                 </p>
                                 <ul class="text-xs text-gray-500 space-y-2">
-                                    <li>• Minimalist Architecture</li>
-                                    <li>• Nolan (Pacing & Structure)</li>
-                                    <li>• Villeneuve (Scale)</li>
+                                    <li>• Interstellar (Nolan)</li>
+                                    <li>• Pulp Fiction (Tarantino)</li>
+                                    <li>• Inception (Nolan)</li>
+                                    <li>• Inglourious Basterds (Tarantino)</li>
                                 </ul>
                             </div>
                         </div>
@@ -496,12 +590,13 @@
                             <div class="tilt-card bg-[#050505] p-10 h-full border border-white/5 hover:border-white/20 transition-colors">
                                 <span class="text-xs font-mono text-lux-gold uppercase tracking-widest mb-6 block">Flow State</span>
                                 <p class="text-gray-400 font-light leading-relaxed mb-6">
-                                    "Deep work requires a soundtrack. No vocals, just focus."
+                                    "Deep work requires a soundtrack. The frequencies that keep the terminal moving."
                                 </p>
                                 <ul class="text-xs text-gray-500 space-y-2">
-                                    <li>• Brian Eno</li>
-                                    <li>• Hans Zimmer</li>
-                                    <li>• Max Richter</li>
+                                    <li>• Time — Hans Zimmer</li>
+                                    <li>• Cornfield Chase — Hans Zimmer</li>
+                                    <li>• On the Nature of Daylight — Max Richter</li>
+                                    <li>• An Ending (Ascent) — Brian Eno</li>
                                 </ul>
                             </div>
                         </div>
@@ -511,12 +606,13 @@
                             <div class="tilt-card bg-[#050505] p-10 h-full border border-white/5 hover:border-white/20 transition-colors">
                                 <span class="text-xs font-mono text-lux-gold uppercase tracking-widest mb-6 block">Codebase</span>
                                 <p class="text-gray-400 font-light leading-relaxed mb-6">
-                                    "Books that debugged my worldview."
+                                    "Books that debugged my worldview. First principles, mental models, and futures."
                                 </p>
                                 <ul class="text-xs text-gray-500 space-y-2">
-                                    <li>• The Beginning of Infinity</li>
-                                    <li>• Superintelligence</li>
-                                    <li>• Dune</li>
+                                    <li>• Zero to One (Peter Thiel)</li>
+                                    <li>• The Beginning of Infinity (David Deutsch)</li>
+                                    <li>• Snow Crash (Neal Stephenson)</li>
+                                    <li>• Thinking, Fast and Slow (Daniel Kahneman)</li>
                                 </ul>
                             </div>
                         </div>
@@ -524,22 +620,54 @@
                 </div>
             </section>
 
-            <!-- FOOTER -->
-            <section id="epilogue" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative bg-black">
-                <div class="z-10 relative">
-                    <p class="font-mono text-xs text-gray-500 uppercase tracking-widest mb-16">Ready to Build?</p>
+            </div> <!-- END READING MODE CONTAINER -->
+
+            <!-- FOOTER WITH INTEGRATED GAME -->
+            <section id="epilogue" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative bg-black overflow-hidden">
+                
+                <!-- GAME CONTAINER -->
+                <div id="contact-game" class="z-20 relative w-full max-w-2xl flex flex-col items-center transition-all duration-500">
+                    <p class="font-mono text-xs text-lux-gold uppercase tracking-widest mb-4">Sprint to Deploy</p>
+                    <h2 class="text-3xl md:text-5xl font-light text-white mb-2">Survive until Friday.</h2>
+                    <p class="text-sm text-gray-400 font-mono mb-8 transition-colors duration-300" id="footer-game-status">Press Space or Tap to jump the bugs.</p>
+
+                    <div class="w-full h-[300px] bg-[#050505] border border-white/10 hover:border-white/30 transition-colors duration-500 rounded-sm relative overflow-hidden shadow-2xl shadow-black/50 cursor-pointer">
+                        <canvas id="footer-game-canvas" class="absolute inset-0 w-full h-full transition-transform duration-75"></canvas>
+                        
+                        <!-- Grid Overlay -->
+                        <div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
+                        
+                        <!-- Start Overlay -->
+                        <div id="game-start-overlay" class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/60 backdrop-blur-[2px] transition-opacity duration-500">
+                            <button id="btn-start-game" class="bg-white text-black px-8 py-3 rounded-sm font-mono text-xs uppercase tracking-widest hover:bg-gray-200 transition-colors font-bold hover-trigger">Start Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACT INFO (HIDDEN INITIALLY) -->
+                <div id="contact-info" class="z-10 relative w-full max-w-4xl hidden opacity-0 transition-all duration-1000 scale-95">
+                    <p class="font-mono text-xs text-red-500 uppercase tracking-widest mb-2">Crashed in production.</p>
+                    <p class="font-mono text-sm md:text-base text-gray-400 uppercase tracking-widest mb-16 max-w-lg mx-auto leading-relaxed">
+                        Wanna have a bug free deployment on Fridays?<br>
+                        <span class="text-white mt-2 block">Contact me.</span>
+                    </p>
                     
-                    <a href="mailto:sayanclnt@gmail.com" class="group block hover-trigger">
-                        <h2 class="text-[8vw] md:text-[5vw] font-light text-white group-hover:opacity-50 transition-opacity duration-500">
+                    <a href="mailto:sayanclnt@gmail.com" class="group block hover-trigger mb-6">
+                        <h2 class="text-[7vw] md:text-[5vw] font-light text-white group-hover:opacity-50 transition-opacity duration-500 truncate">
                             sayanclnt@gmail.com
                         </h2>
-                        <div class="h-[1px] w-0 bg-white mx-auto mt-6 group-hover:w-full transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
+                        <div class="h-[1px] w-0 bg-white mx-auto mt-4 group-hover:w-1/2 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
+                    </a>
+
+                    <a href="tel:+910000000000" class="group block hover-trigger">
+                        <h3 class="text-[4vw] md:text-[2vw] font-mono text-gray-500 group-hover:text-white transition-colors duration-500">
+                            +91 00000 00000
+                        </h3>
                     </a>
 
                     <div class="mt-32 flex flex-col md:flex-row gap-8 md:gap-24 justify-center items-center">
                         <a href="https://linkedin.com/in/sayanchowdhury" class="text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-[0.2em] transition-colors hover-trigger">LinkedIn</a>
                         <a href="https://plusb.in" class="text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-[0.2em] transition-colors hover-trigger">Plus B</a>
-                        <a href="https://aiexchange.tech" class="text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-[0.2em] transition-colors hover-trigger">AI Exchange</a>
                     </div>
                 </div>
                 
@@ -662,6 +790,9 @@
             initAnimations();
             initCursor();
             initTiltCards();
+            initRunnerGame();
+            initModeToggle();
+            initDigitalTwin();
         }
 
         // --- 2. SMOOTH SCROLL ---
@@ -827,6 +958,604 @@
                 wrapper.addEventListener('mouseleave', () => {
                     card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
                 });
+            });
+        }
+
+        // --- 7. MINI-GAME: RUNNER (MONDAY TO FRIDAY DEPLOY) ---
+        function initRunnerGame() {
+            const canvas = document.getElementById('footer-game-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const statusText = document.getElementById('footer-game-status');
+            const gameContainer = document.getElementById('contact-game');
+            const contactInfo = document.getElementById('contact-info');
+            
+            const startOverlay = document.getElementById('game-start-overlay');
+            const btnStart = document.getElementById('btn-start-game');
+
+            let width, height;
+            
+            // GAME STATES: 'PLAYING', 'LAUNCHING', 'CRASHING', 'DONE'
+            let gameState = 'PLAYING';
+            let hasStarted = false;
+            let gameBooted = false;
+            
+            // Environment
+            let groundY = 240;
+            let gameSpeed = 3.5; // Nice and slow
+            
+            // Narrative Progression
+            const days = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"];
+            const successMsgs = [
+                "Oof. Bug-free Monday.",
+                "Tuesday passed.",
+                "Hump day survived.",
+                "Thursday... almost there.",
+                "" // Friday spawns deploy button
+            ];
+            let currentDayIndex = 0;
+            
+            // Floating Message
+            let floatMsg = { text: "", alpha: 0, y: 0 };
+
+            // Entities
+            let dev = {
+                x: 80,
+                y: groundY - 30,
+                w: 30,
+                h: 30,
+                vy: 0,
+                gravity: 0.4, // Super floaty and easy
+                jumpForce: -10,
+                isJumping: false
+            };
+
+            let activeBug = null;
+            let bugDelay = 0; // Delay before spawning next bug
+            let deployZone = null;
+            
+            let rocket = { x: 0, y: 0, vy: 0, angle: 0 };
+            let particles = [];
+            let frameCount = 0;
+
+            function resize() {
+                if(gameState === 'DONE' && particles.length === 0) return;
+                const rect = canvas.parentElement.getBoundingClientRect();
+                width = rect.width;
+                height = rect.height;
+                canvas.width = width;
+                canvas.height = height;
+                groundY = height - 40;
+                if (!dev.isJumping) dev.y = groundY - dev.h;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            // Slower, crawling bug
+            class Bug {
+                constructor() {
+                    this.w = 35;
+                    this.h = 16;
+                    this.x = width;
+                    this.y = groundY - this.h;
+                    this.legPhase = 0;
+                }
+                update() {
+                    this.x -= gameSpeed;
+                    this.legPhase += 0.2;
+                }
+                draw() {
+                    ctx.fillStyle = '#ef4444';
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = '#ef4444';
+                    
+                    // Draw body
+                    ctx.beginPath();
+                    if(ctx.roundRect) {
+                        ctx.roundRect(this.x, this.y, this.w, this.h, 4);
+                    } else {
+                        ctx.rect(this.x, this.y, this.w, this.h);
+                    }
+                    ctx.fill();
+                    
+                    // Crawling legs animation
+                    ctx.strokeStyle = '#ef4444';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    let legOffset = Math.sin(this.legPhase) * 4;
+                    // Left legs
+                    ctx.moveTo(this.x + 5, this.y + this.h); ctx.lineTo(this.x + 5 - legOffset, this.y + this.h + 6);
+                    ctx.moveTo(this.x + 15, this.y + this.h); ctx.lineTo(this.x + 15 + legOffset, this.y + this.h + 6);
+                    // Right legs
+                    ctx.moveTo(this.x + this.w - 5, this.y + this.h); ctx.lineTo(this.x + this.w - 5 + legOffset, this.y + this.h + 6);
+                    ctx.stroke();
+                    
+                    ctx.shadowBlur = 0;
+                }
+            }
+
+            class Particle {
+                constructor(x, y, color, explodeMode = false) {
+                    this.x = x;
+                    this.y = y;
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = explodeMode ? (Math.random() * 15 + 5) : (Math.random() * 4 + 1);
+                    this.vx = Math.cos(angle) * speed;
+                    this.vy = Math.sin(angle) * speed;
+                    if (!explodeMode) this.vy = Math.abs(this.vy); // Rocket exhaust goes down
+                    this.radius = Math.random() * (explodeMode ? 5 : 3) + 2;
+                    this.color = color;
+                    this.alpha = 1;
+                    this.decay = explodeMode ? 0.02 : 0.05;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.alpha -= this.decay;
+                }
+                draw() {
+                    ctx.globalAlpha = Math.max(0, this.alpha);
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                }
+            }
+
+            function showMessage(text) {
+                floatMsg.text = text;
+                floatMsg.alpha = 1;
+                floatMsg.y = height / 2 + 20;
+            }
+
+            btnStart.addEventListener('click', (e) => {
+                e.stopPropagation(); // prevent triggering jump immediately
+                gameBooted = true;
+                startOverlay.style.opacity = '0';
+                setTimeout(() => startOverlay.style.display = 'none', 500);
+            });
+
+            function jump(e) {
+                // Ignore jump if user is typing in the chatbox
+                if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+                
+                if (!gameBooted) return;
+
+                if(e && e.type === 'keydown' && e.code !== 'Space' && e.code !== 'ArrowUp') return;
+                if(e && e.cancelable) e.preventDefault(); // Stop scrolling on space/touch
+
+                if (gameState !== 'PLAYING') return;
+
+                if (!hasStarted) {
+                    hasStarted = true;
+                    statusText.innerText = `Day: ${days[currentDayIndex]}`;
+                    spawnBug();
+                }
+
+                if (!dev.isJumping) {
+                    dev.vy = dev.jumpForce;
+                    dev.isJumping = true;
+                }
+            }
+
+            // Input listeners
+            window.addEventListener('keydown', jump);
+            canvas.addEventListener('mousedown', jump);
+            canvas.addEventListener('touchstart', jump, {passive: false});
+
+            function spawnBug() {
+                if (currentDayIndex < 4) {
+                    activeBug = new Bug();
+                } else if (currentDayIndex === 4) {
+                    // Friday! Spawn Deploy Zone
+                    deployZone = { x: width, y: groundY - 80, w: 120, h: 80 };
+                    statusText.innerText = "Friday! Deploy to Production.";
+                    statusText.classList.replace('text-gray-400', 'text-green-400');
+                }
+            }
+
+            function triggerLaunch() {
+                gameState = 'LAUNCHING';
+                statusText.innerText = "Deploying Payload...";
+                statusText.classList.replace('text-green-400', 'text-lux-gold');
+                
+                // Init Rocket at Deploy Zone
+                rocket.x = deployZone.x + deployZone.w / 2;
+                rocket.y = groundY;
+                rocket.vy = 0;
+                rocket.angle = 0;
+                
+                // Screen shake
+                canvas.style.transform = "translateY(2px)";
+                setTimeout(() => canvas.style.transform = "translateY(0)", 100);
+            }
+
+            function explode() {
+                gameState = 'DONE';
+                statusText.innerText = "CRITICAL FAILURE.";
+                statusText.classList.replace('text-lux-gold', 'text-red-500');
+                
+                // Massive Explosion
+                for(let i=0; i<150; i++) {
+                    particles.push(new Particle(rocket.x, groundY, '#ef4444', true));
+                    particles.push(new Particle(rocket.x, groundY, '#D4AF37', true));
+                    particles.push(new Particle(rocket.x, groundY, '#ffffff', true));
+                    particles.push(new Particle(rocket.x, groundY, '#111111', true));
+                }
+
+                // Shake screen violently
+                canvas.style.transform = "scale(0.9) rotate(-3deg)";
+                setTimeout(() => canvas.style.transform = "scale(1.1) rotate(3deg)", 50);
+                setTimeout(() => canvas.style.transform = "scale(0.95) rotate(-1deg)", 100);
+                setTimeout(() => canvas.style.transform = "scale(1) rotate(0)", 150);
+
+                // Reveal
+                setTimeout(() => {
+                    gameContainer.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                    setTimeout(() => {
+                        gameContainer.classList.add('hidden');
+                        contactInfo.classList.remove('hidden');
+                        void contactInfo.offsetWidth; 
+                        contactInfo.classList.remove('opacity-0', 'scale-95');
+                        contactInfo.classList.add('opacity-100', 'scale-100');
+                        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+                    }, 500);
+                }, 1500);
+            }
+
+            function resetGame() {
+                // If hit a bug, just reset to Monday
+                currentDayIndex = 0;
+                activeBug = null;
+                deployZone = null;
+                hasStarted = false;
+                dev.y = groundY - dev.h;
+                statusText.innerText = "Code failed QA. Back to Monday.";
+                statusText.classList.remove('text-gray-400');
+                statusText.classList.add('text-red-400');
+                
+                canvas.style.backgroundColor = "rgba(239, 68, 68, 0.2)";
+                setTimeout(() => canvas.style.backgroundColor = "transparent", 150);
+            }
+
+            function drawRocket() {
+                ctx.save();
+                ctx.translate(rocket.x, rocket.y);
+                ctx.rotate(rocket.angle);
+                
+                // Rocket Body
+                ctx.fillStyle = '#E5E5E5';
+                ctx.beginPath();
+                ctx.moveTo(0, -40); // Nose
+                ctx.lineTo(15, -10);
+                ctx.lineTo(15, 30);
+                ctx.lineTo(-15, 30);
+                ctx.lineTo(-15, -10);
+                ctx.closePath();
+                ctx.fill();
+                
+                // Fins
+                ctx.fillStyle = '#ef4444';
+                ctx.beginPath();
+                ctx.moveTo(15, 10); ctx.lineTo(25, 30); ctx.lineTo(15, 30); ctx.fill();
+                ctx.beginPath();
+                ctx.moveTo(-15, 10); ctx.lineTo(-25, 30); ctx.lineTo(-15, 30); ctx.fill();
+                
+                // Window
+                ctx.fillStyle = '#3B82F6';
+                ctx.beginPath();
+                ctx.arc(0, 0, 6, 0, Math.PI*2);
+                ctx.fill();
+
+                ctx.restore();
+            }
+
+            function drawGame() {
+                if (gameState === 'DONE' && particles.length === 0) return;
+                ctx.clearRect(0, 0, width, height);
+
+                frameCount++;
+
+                // Draw Ground
+                ctx.beginPath();
+                ctx.moveTo(0, groundY);
+                ctx.lineTo(width, groundY);
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                if (gameState === 'PLAYING') {
+                    if (hasStarted) {
+                        // Dev Physics
+                        dev.vy += dev.gravity;
+                        dev.y += dev.vy;
+                        if (dev.y >= groundY - dev.h) {
+                            dev.y = groundY - dev.h;
+                            dev.vy = 0;
+                            dev.isJumping = false;
+                        }
+
+                        // Bug Logic
+                        if (activeBug) {
+                            activeBug.update();
+                            activeBug.draw();
+
+                            // Collision Check (very forgiving)
+                            if (
+                                dev.x + 5 < activeBug.x + activeBug.w - 5 &&
+                                dev.x + dev.w - 5 > activeBug.x + 5 &&
+                                dev.y + 5 < activeBug.y + activeBug.h - 5 &&
+                                dev.y + dev.h - 5 > activeBug.y + 5
+                            ) {
+                                resetGame();
+                            }
+
+                            // Bug passed successfully
+                            if (activeBug && activeBug.x + activeBug.w < 0) {
+                                showMessage(successMsgs[currentDayIndex]);
+                                currentDayIndex++;
+                                activeBug = null;
+                                bugDelay = 60; // Wait 1 sec before next spawn
+                                statusText.innerText = `Day: ${days[currentDayIndex]}`;
+                                statusText.classList.remove('text-red-400');
+                                statusText.classList.add('text-gray-400');
+                            }
+                        } else if (bugDelay > 0) {
+                            bugDelay--;
+                            if (bugDelay === 0) spawnBug();
+                        }
+
+                        // Deploy Zone Logic
+                        if (deployZone) {
+                            deployZone.x -= gameSpeed;
+                            
+                            // Draw the big green button
+                            ctx.fillStyle = '#4ade80';
+                            ctx.shadowBlur = 15;
+                            ctx.shadowColor = '#4ade80';
+                            if(ctx.roundRect) {
+                                ctx.roundRect(deployZone.x, deployZone.y, deployZone.w, deployZone.h, 8);
+                            } else {
+                                ctx.rect(deployZone.x, deployZone.y, deployZone.w, deployZone.h);
+                            }
+                            ctx.fill();
+                            ctx.shadowBlur = 0;
+                            
+                            ctx.fillStyle = '#050505';
+                            ctx.font = 'bold 22px "Space Grotesk", monospace';
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            ctx.fillText("DEPLOY", deployZone.x + deployZone.w/2, deployZone.y + deployZone.h/2);
+
+                            // Hit Deploy Zone!
+                            if (dev.x + dev.w > deployZone.x + 20) {
+                                triggerLaunch();
+                            }
+                        }
+                    }
+
+                    // Draw Dev
+                    ctx.fillStyle = '#E5E5E5';
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = '#ffffff';
+                    ctx.fillRect(dev.x, dev.y, dev.w, dev.h);
+                    ctx.fillStyle = '#030303';
+                    ctx.fillRect(dev.x + 18, dev.y + 6, 8, 4); // Glasses
+                    ctx.shadowBlur = 0;
+
+                } else if (gameState === 'LAUNCHING') {
+                    // Rocket Taking Off
+                    rocket.vy -= 0.15; // Accelerate up
+                    rocket.y += rocket.vy;
+                    
+                    // Exhaust particles
+                    particles.push(new Particle(rocket.x, rocket.y + 30, '#ef4444', false));
+                    particles.push(new Particle(rocket.x, rocket.y + 30, '#D4AF37', false));
+                    
+                    drawRocket();
+
+                    // Reached apex -> Malfunction
+                    if (rocket.y < 50) {
+                        gameState = 'CRASHING';
+                        statusText.innerText = "Wait. Oh no.";
+                        rocket.vy = 0;
+                    }
+
+                } else if (gameState === 'CRASHING') {
+                    // Rocket Malfunction & Fall
+                    rocket.angle += 0.15; // Spin
+                    if (rocket.angle > Math.PI) rocket.angle = Math.PI; // Point down
+                    
+                    rocket.vy += 0.8; // Accelerate down fast (gravity)
+                    rocket.y += rocket.vy;
+                    
+                    // Smoke particles
+                    particles.push(new Particle(rocket.x, rocket.y - 30, '#555555', false));
+
+                    drawRocket();
+
+                    // Hit ground
+                    if (rocket.y >= groundY) {
+                        explode();
+                    }
+                }
+
+                // Draw Day Progress UI
+                if (gameState === 'PLAYING') {
+                    ctx.fillStyle = 'rgba(255,255,255,0.05)';
+                    ctx.font = 'bold 50px "Syncopate", sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(days[currentDayIndex], width/2, 90);
+                }
+
+                // Draw Floating Messages
+                if (floatMsg.alpha > 0) {
+                    ctx.fillStyle = `rgba(212, 175, 55, ${floatMsg.alpha})`; // lux-gold
+                    ctx.font = 'italic 20px "Libre Baskerville", serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(floatMsg.text, width/2, floatMsg.y);
+                    floatMsg.y -= 0.5; // Float up
+                    floatMsg.alpha -= 0.01; // Fade out
+                }
+
+                // Draw Particles
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    let p = particles[i];
+                    p.update();
+                    p.draw();
+                    if (p.alpha <= 0) particles.splice(i, 1);
+                }
+
+                requestAnimationFrame(drawGame);
+            }
+
+            drawGame();
+        }
+
+        // --- 8. MODE TOGGLE ---
+        function initModeToggle() {
+            const btnRead = document.getElementById('btn-read');
+            const btnChat = document.getElementById('btn-chat');
+            const slider = document.getElementById('toggle-slider');
+            const contentRead = document.getElementById('content-read');
+            const contentChat = document.getElementById('content-chat');
+            
+            function setMode(mode) {
+                if(mode === 'chat') {
+                    slider.style.left = 'calc(50% + 3px)'; // Slide to right
+                    btnChat.classList.replace('text-gray-500', 'text-black');
+                    btnRead.classList.replace('text-black', 'text-gray-500');
+                    contentRead.classList.add('hidden');
+                    contentChat.classList.remove('hidden');
+                } else {
+                    slider.style.left = '6px'; // Slide to left
+                    btnRead.classList.replace('text-gray-500', 'text-black');
+                    btnChat.classList.replace('text-black', 'text-gray-500');
+                    contentRead.classList.remove('hidden');
+                    contentChat.classList.add('hidden');
+                }
+                setTimeout(() => {
+                    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+                }, 100);
+            }
+
+            btnRead.addEventListener('click', () => setMode('read'));
+            btnChat.addEventListener('click', () => setMode('chat'));
+
+            // Auto-switch back to read mode if user clicks a nav link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href !== '#' && href !== '#prologue') {
+                        setMode('read');
+                    }
+                });
+            });
+        }
+
+        // --- 9. DIGITAL TWIN (GEMINI API) ---
+        function initDigitalTwin() {
+            const form = document.getElementById('chat-form');
+            const input = document.getElementById('chat-input');
+            const log = document.getElementById('chat-log');
+            
+            const apiKey = ""; 
+            const model = "gemini-2.5-flash-preview-09-2025";
+            
+            const sysPrompt = `You are the digital twin of Sayan Chowdhury. Talk like a real, chill, and friendly human developer. Speak in first person ("I", "my").
+Do NOT use marketing buzzwords like "hype", "fluff", "future of intelligence", or "human first" in your responses. Just talk normally. 
+About you: You are a practical builder who likes making things that actually work and solve real problems.
+Experience: You work as an Engineer - Data Analytics at L&T Construction (Nov 2023-present) where you build GenAI applications like the Structural Agentic Modeller (SAM), fine-tune Gemma 2 for NLP-to-SQL, and build PyTorch models. Before that, you were an Engineer - Automation (Oct 2021-Oct 2023) at L&T writing Python/Vue systems.
+Education: Currently doing a BS in Data Science and Applications at IIT Madras (2024-Present, CGPA 8.03, Project CGPA 10). Before that, got a Diploma in Electrical Engineering from Ramakrishna Mission Shilpapitha (2018-2021, CGPA 9.00).
+Side Projects: You built PlusB (an Agentic AI OS with 7 specialized experts sharing unified context) and a Cinema Audience Prediction ML pipeline.
+Interests: You like movies by Nolan and Tarantino (Interstellar, Pulp Fiction, Inception). You listen to movie scores while coding (Hans Zimmer, Max Richter, Brian Eno). You read books like Zero to One, The Beginning of Infinity, and Snow Crash.
+Tone: Casual, friendly, direct, and conversational. Speak like you're chatting with another dev on Discord or over coffee. Keep your answers short (1 to 3 sentences max). Never sound like a corporate brochure or an edgy AI.`;
+
+            let history = [];
+
+            // Helper to scroll to latest message
+            function scrollToBottom() {
+                log.scrollTop = log.scrollHeight;
+            }
+
+            // Helper to add messages to UI
+            function appendMessage(text, role, isError = false) {
+                const div = document.createElement('div');
+                div.className = role === 'user' 
+                    ? 'self-end max-w-[85%] md:max-w-[75%] bg-white text-black border border-white/10 rounded-2xl rounded-tr-sm px-5 py-4 font-mono text-xs whitespace-pre-wrap leading-relaxed shadow-lg'
+                    : `self-start max-w-[85%] md:max-w-[75%] ${isError ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-[#111111] border-white/5 text-gray-300'} border rounded-2xl rounded-tl-sm px-5 py-4 font-light text-sm leading-relaxed whitespace-pre-wrap shadow-lg`;
+                div.innerText = text;
+                log.appendChild(div);
+                scrollToBottom();
+                return div;
+            }
+
+            // Loading indicator UI
+            function appendLoading() {
+                const div = document.createElement('div');
+                div.className = 'self-start bg-[#111111] border border-white/5 rounded-2xl rounded-tl-sm px-5 py-4 flex gap-1.5 items-center shadow-lg';
+                div.innerHTML = `
+                    <div class="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce"></div>
+                    <div class="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                    <div class="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+                `;
+                log.appendChild(div);
+                scrollToBottom();
+                return div;
+            }
+
+            // Exponential backoff fetch
+            async function fetchWithRetry(url, options, retries = 5) {
+                const delays = [1000, 2000, 4000, 8000, 16000];
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const res = await fetch(url, options);
+                        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                        return await res.json();
+                    } catch (err) {
+                        if (i === retries - 1) throw err;
+                        await new Promise(r => setTimeout(r, delays[i]));
+                    }
+                }
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const text = input.value.trim();
+                if(!text) return;
+                
+                appendMessage(text, 'user');
+                input.value = '';
+                
+                const loadingIndicator = appendLoading();
+                history.push({role: "user", parts: [{text}]});
+                
+                try {
+                    const payload = {
+                        contents: history,
+                        systemInstruction: { parts: [{ text: sysPrompt }] }
+                    };
+                    
+                    const data = await fetchWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    loadingIndicator.remove();
+                    
+                    const aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (aiResponse) {
+                        appendMessage(aiResponse, 'model');
+                        history.push({role: "model", parts: [{text: aiResponse}]});
+                    } else {
+                        appendMessage("Neural link disruption. Please try again.", 'model', true);
+                    }
+                } catch(err) {
+                    loadingIndicator.remove();
+                    appendMessage("API connection failed. The mainframe is currently offline.", 'model', true);
+                }
             });
         }
     </script>
